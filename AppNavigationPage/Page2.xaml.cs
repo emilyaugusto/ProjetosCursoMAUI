@@ -14,6 +14,6 @@ public partial class Page2 : ContentPage
 
     private void OnButtonPreviousClicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new Page3());
+        Navigation.PopAsync();
     }
 }

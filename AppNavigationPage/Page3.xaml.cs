@@ -6,4 +6,8 @@ public partial class Page3 : ContentPage
 	{
 		InitializeComponent();
 	}
+    private void OnButtonPreviousClicked(object sender, EventArgs e)
+    {
+        Navigation.PopAsync();
+    }
 }
