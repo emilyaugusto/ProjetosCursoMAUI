@@ -10,6 +10,6 @@ namespace AppMAUIGallery.Models
     {
         public string Title { get; set; } // Nome do componente
         public string Description { get; set; } // Descrição do componente
-        public Page Page { get; set; } // Página do componente
+        public Type Page { get; set; } // Página do componente
     }
 }
