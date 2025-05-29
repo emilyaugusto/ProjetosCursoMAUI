@@ -40,7 +40,6 @@
 
 	<ItemGroup>
 		<!-- App Icon -->
-		<MauiIcon Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'" Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg_android.svg" Color="#151515" />
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#151515" />
 
 		<!-- Splash Screen -->
@@ -58,6 +57,39 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <AndroidResource Remove="NovaPasta\**" />
+	  <AndroidResource Remove="Platforms\NovaPasta\**" />
+	  <AndroidResource Remove="Properties\NovaPasta1\**" />
+	  <AndroidResource Remove="Properties\NovaPasta2\**" />
+	  <AndroidResource Remove="Properties\NovaPasta\**" />
+	  <Compile Remove="NovaPasta\**" />
+	  <Compile Remove="Platforms\NovaPasta\**" />
+	  <Compile Remove="Properties\NovaPasta1\**" />
+	  <Compile Remove="Properties\NovaPasta2\**" />
+	  <Compile Remove="Properties\NovaPasta\**" />
+	  <EmbeddedResource Remove="NovaPasta\**" />
+	  <EmbeddedResource Remove="Platforms\NovaPasta\**" />
+	  <EmbeddedResource Remove="Properties\NovaPasta1\**" />
+	  <EmbeddedResource Remove="Properties\NovaPasta2\**" />
+	  <EmbeddedResource Remove="Properties\NovaPasta\**" />
+	  <MauiCss Remove="NovaPasta\**" />
+	  <MauiCss Remove="Platforms\NovaPasta\**" />
+	  <MauiCss Remove="Properties\NovaPasta1\**" />
+	  <MauiCss Remove="Properties\NovaPasta2\**" />
+	  <MauiCss Remove="Properties\NovaPasta\**" />
+	  <MauiXaml Remove="NovaPasta\**" />
+	  <MauiXaml Remove="Platforms\NovaPasta\**" />
+	  <MauiXaml Remove="Properties\NovaPasta1\**" />
+	  <MauiXaml Remove="Properties\NovaPasta2\**" />
+	  <MauiXaml Remove="Properties\NovaPasta\**" />
+	  <None Remove="NovaPasta\**" />
+	  <None Remove="Platforms\NovaPasta\**" />
+	  <None Remove="Properties\NovaPasta1\**" />
+	  <None Remove="Properties\NovaPasta2\**" />
+	  <None Remove="Properties\NovaPasta\**" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
@@ -65,6 +97,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="AppFlyout.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Layouts\StackLayoutPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Views\MainPage.xaml">
